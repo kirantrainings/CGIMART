@@ -1,0 +1,20 @@
+{
+"tabs":[
+{ "name":"Home",
+"cssClass":"",
+"templateUrl":"app/templates/home.tpl.html"
+},
+{ "name":"Vehicles",
+"cssClass":"",
+"templateUrl":"app/templates/vehicles.tpl.html"
+},
+{ "name":"Compare",
+"cssClass":"",
+"templateUrl":"app/templates/compare.tpl.html"
+},
+{ "name":"Used Vehicles",
+"cssClass":"",
+"templateUrl":"app/templates/compare.tpl.html"
+}
+]
+}
