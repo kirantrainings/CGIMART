@@ -1,5 +1,5 @@
 
-<div class="panel" ng-controller="newCarCtrl" >
+<div class="panel" ng-controller="vehicleCtrl">
     <table class="table">
         <thead>
         <tr>
@@ -12,6 +12,22 @@
         </tr>
         </thead>
         <tbody>
+        <tr ng-repeat="vehicle in vehicles">
+            <td>{{$index}}</td>
+            <td><img src="{{vehicle.image}}" class="img-rounded" alt="Cinque Terre" width="304" height="236"></td>
+            </td>
+            <td>{{vehicle.model|uppercase}}</td>
+            <td>{{vehicle.make|lowercase}}</td>
+            <td>{{vehicle.year}}</td>
+            <td>{{vehicle.price}}</td>
+            <td><input type="checkbox" ng-model="vehicle.selected"
+                       ng-click="selectedVehicle(vehicle)"></td>
+
+        </tr>
         </tbody>
     </table>
+</div>
+
+<div class="panel" ng-controller="vehicleDetailCtrl">
+
 </div>

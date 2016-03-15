@@ -3,20 +3,38 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>CGI App</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="content/css/bootstrap.css">
     <link rel="stylesheet" href="content/css/bootstrap-theme.css">
+
     <script src="vendor/jquery-1.11.3.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="vendor/bootstrap.js"></script>
     <script src="vendor/angular.js"></script>
 </head>
 <body ng-app="DemoMart">
 <div ng-controller="mainCtrl" class="container">
-   <div ng-include="'app/templates/header.tpl.html'"></div>
+
+    <div cgi-nav-bar></div>
+   <!--<div ng-include="'app/templates/header.tpl.html'"></div>-->
     <div ng-include="selectedPage"></div>
+    <div cgi-read-only my-brand="{{brandname}}"
+         two-way-brand="data"></div>
+    <div>controller Value:{{brandname}}</div>
+    <h1>{{data.name}}</h1>
 </div>
 <script src="app/app.js"></script>
+<script src="app/directives/cgiBrandName.js"></script>
+<script src="app/directives/cgiNavBar.js"></script>
+<script src="app/directives/cgiToggle.js"></script>
+<script src="app/directives/cgiDatePicker.js"></script>
+<script src="app/directives/isolateDir.js"></script>
+<script src="app/filters/phoneformat.js"></script>
 <script src="app/services/tabService.js"></script>
+<script src="app/services/vehicleService.js"></script>
 <script src="app/controllers/mainCtrl.js"></script>
 <script src="app/controllers/homeCtrl.js"></script>
+<script src="app/controllers/vehicleCtrl.js"></script>
+<script src="app/controllers/vehicleDetailCtrl.js"></script>
 </body>
 </html>

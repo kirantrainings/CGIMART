@@ -5,14 +5,14 @@
       "make": "Audi",
       "model": "A5",
       "price": "20000",
-      "image": "v4.jpg"
+      "image": "images/v4.jpg"
     },
     {
       "year": "2015",
       "make": "Benz",
       "model": "C2000",
       "price": "20000",
-      "image": "images/v3.jgp"
+      "image": "images/v3.jpg"
     }
   ,
     {

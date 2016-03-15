@@ -19,13 +19,27 @@ angular.module("DemoMart")
             },
         ];*/
 
+            $scope.brandname="CGI Brand";
+            $scope.data={name:"kiran"};
+
+
             tabService.tabs().success(function(response){
                $scope.tabs=response.tabs;
             }).error(function(err){
                 console.log(err)
             });
-        $scope.loadPage=function(tab){
+
+            $scope.loadPage=function(tab){
             tab.cssClass="active";
             $scope.selectedPage=tab.templateUrl;
-        }
+
+                $scope.selectedVehicleCount=0;
+                $scope.$on("VEHICLE_ADDED",function(event,args){
+                    $scope.selectedVehicleCount++
+                });
+
+                $scope.$on("VEHICLE_DELETED",function(event,args){
+                    $scope.selectedVehicleCount--;
+                });
+        };
     }]);
