@@ -42,4 +42,8 @@ angular.module("DemoMart")
                     $scope.selectedVehicleCount--;
                 });
         };
+
+            $scope.loadLogin = function(){
+                $scope.selectedPage="app/templates/login.tpl.html";
+            }
     }]);

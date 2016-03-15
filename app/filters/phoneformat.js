@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 3/15/2016.
  */
-angular.module('DemoMart')
+angular.module('common.filters')
        .filter('formatphone',[function(){
          return function(input,criteria){
 

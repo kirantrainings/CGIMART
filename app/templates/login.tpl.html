@@ -1,0 +1,77 @@
+<form name="userForm"
+      novalidate
+      ng-controller="loginCtrl">
+
+    <p ng-show="userForm.username.$error.required
+        && userForm.username.$dirty"
+       class="help-block">You name is required.</p>
+
+    <p ng-show="userForm.username.$error.minlength
+        && userForm.username.$dirty"
+       class="help-block">User Name should be 4 characters</p>
+
+    <p class="help-block"
+       ng-show="userForm.username.$error.maxlength
+           && userForm.username.$dirty">
+        UserName name cannot exceed 10 characters.
+    </p>
+
+    <p class="help-block"
+       ng-show="userForm.username.$error.pattern
+           && userForm.username.$dirty">
+        User Name should not contain integers
+    </p>    <!-- NAME -->
+    <div class="form-group"
+         ng-class="{ 'has-error' : userForm.username.$invalid
+              && userForm.username.$dirty
+              }">
+        <label>Name*</label>
+
+        <input type="text"
+               name="username"
+               class="form-control"
+               ng-model="user.name"
+               required
+                ng-minlength="4"
+                ng-maxlength="10"
+                ng-pattern="/^[a-zA-Z]*$/">
+
+        <p ng-show="userForm.username.$error.required
+        && userForm.username.$dirty"
+           class="help-block">You name is required.</p>
+
+        <p ng-show="userForm.username.$error.minlength
+        && userForm.username.$dirty"
+           class="help-block">User Name should be 4 characters</p>
+
+        <p class="help-block"
+           ng-show="userForm.username.$error.maxlength
+           && userForm.username.$dirty">
+            UserName name cannot exceed 10 characters.
+        </p>
+
+        <p class="help-block"
+           ng-show="userForm.username.$error.pattern
+           && userForm.username.$dirty">
+            User Name should not contain integers
+        </p>
+    </div>
+
+    <div class="form-group"
+         ng-class="{ 'has-error' : userForm.age.$error.validateage
+              && userForm.age.$dirty
+              }">
+        <label>Age*</label>
+
+        <input type="text"
+               name="age"
+               class="form-control"
+               ng-model="user.age"
+                validateage>
+
+        <p ng-show="userForm.age.$error.validateage
+        && userForm.age.$dirty"
+           class="help-block">Invalid age.</p>
+    </div>
+    <button class="btn btn-primary" ng-click="login()">Login</button>
+</form>
