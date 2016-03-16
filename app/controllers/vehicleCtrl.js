@@ -1,7 +1,8 @@
 
 angular.module("DemoMart")
-      .controller("vehicleCtrl",["$scope","vehicleService","$rootScope",
-        function($scope,vehicleService,$rootScope){
+      .controller("vehicleCtrl",["$scope","vehicleService",
+        "$rootScope","compareFact",
+        function($scope,vehicleService,$rootScope,compareFact){
 
             vehicleService.getVehicles()
                 .success(function(response){
@@ -19,6 +20,6 @@ angular.module("DemoMart")
                 else{
                     $rootScope.$broadcast("VEHICLE_DELETED",{details:vehicle});
                 }
-
+                compareFact.addVehiclesToCompare(vehicle);
             }
         }]);
