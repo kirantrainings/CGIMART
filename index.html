@@ -11,12 +11,15 @@
 <!--    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
     <script src="vendor/bootstrap.js"></script>
     <script src="vendor/angular.js"></script>
+    <script src="vendor/angular-ui-router.js"></script>
 </head>
 <body ng-app="DemoMart">
 <div ng-controller="mainCtrl" class="container">
     <div cgi-nav-bar></div>
-   <!--<div ng-include="'app/templates/header.tpl.html'"></div>-->
-    <div ng-include="selectedPage"></div>
+
+    <div ui-view></div>
+    <!--<div ng-include="'app/templates/header.tpl.html'"></div>-->
+  <!--  <div ng-include="selectedPage"></div>-->
 </div>
 <script src="app/filters/filtersModule.js"></script>
 <script src="app/app.js"></script>
